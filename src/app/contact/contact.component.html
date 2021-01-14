@@ -1,0 +1,78 @@
+<h3 class="text-center mb-2">SAY SOMETHING!</h3>
+<form class="needs-validation mt-5 w-75 mx-auto"
+      novalidate
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="id_nombre">Nombre</label>
+            <input type="text"
+                   class="form-control"
+                   id="id_nombre"
+                   placeholder="Nombre"
+                   formControlName="nombre"
+                   [ngClass]="{'is-invalid':isValidInput('nombre')}">
+            <div class="invalid-feedback">
+                <span *ngIf="contactForm.get('nombre')?.errors?.required">
+                    Your name is required
+                </span>
+                <span *ngIf="contactForm.get('nombre')?.errors?.minlength">
+                    Minimum {{contactForm.get('nombre')?.errors?.minlength.requiredLength}} characters required
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="id_email">E-mail</label>
+            <input type="email"
+                   class="form-control"
+                   id="id_email"
+                   placeholder="E-mail"
+                   formControlName="email"
+                   [ngClass]="{'is-invalid':isValidInput('email')}">
+            <div class="invalid-feedback">
+                <span *ngIf="contactForm.get('email')?.errors?.required">
+                    Your email is required
+                </span>
+                <span *ngIf="contactForm.get('email')?.errors?.pattern">
+                    Email format is invalid
+                </span>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="id_asunto">Asunto</label>
+            <input type="text"
+                   class="form-control"
+                   id="id_asunto"
+                   placeholder="Asunto"
+                   formControlName="asunto"
+                   [ngClass]="{'is-invalid':isValidInput('asunto')}">
+            <div class="invalid-feedback">
+                <span *ngIf="contactForm.get('asunto')?.errors?.required">
+                    Tell me why ain't nothin' but a heartache
+                </span>
+                <span *ngIf="contactForm.get('asunto')?.errors?.minlength">
+                    Minimum {{contactForm.get('asunto')?.errors?.minlength.requiredLength}} characters required
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <label for="id_asunto">Mensaje</label>
+        <textarea class="form-control"
+                  id="id_mensaje"
+                  placeholder="Mensaje"
+                  formControlName="mensaje"
+                  [ngClass]="{'is-invalid':isValidInput('mensaje')}"></textarea>
+        <div class="invalid-feedback">
+            <span *ngIf="contactForm.get('mensaje')?.errors?.required">
+                Tell me why I never wanna hear you say I want it that way
+            </span>
+            <span *ngIf="contactForm.get('mensaje')?.errors?.minlength">
+                Minimum {{contactForm.get('mensaje')?.errors?.minlength.requiredLength}} characters required
+            </span>
+        </div>
+    </div>
+    <button class="btn btn-dark mt-3"
+            type="submit"
+            [disabled]="contactForm.invalid">Enviar</button>
+</form>
