@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Meta, MetaDefinition, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -22,9 +23,13 @@ export class ContactComponent implements OnInit {
     mensaje: ['', [Validators.required, Validators.minLength(25)]]
   })
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private metaService: Meta, private titleService: Title) {
+    //this.titleService.setTitle('Contact me // Marta Casal Portfolio');
+    //this.addTags();
+  }
 
   ngOnInit(): void {
+    //this.metaService.addTag({ name: 'description', content: "Article Description" });
   }
 
   onSubmit() {
@@ -36,6 +41,16 @@ export class ContactComponent implements OnInit {
     const inputName: any = this.contactForm.get(name);
     return inputName.touched && inputName.invalid
   }
+
+  /*addTags() {
+    this.metaService.addTags([
+      { name: 'description', content: `Send me a message and we will be in touch!` },
+      { name: 'robots', content: 'index,follow' },
+      { name: 'keywords', content: 'Frontend Developer, Angular, UX/UI, Web Design, HTML, CSS, JS' },
+      { name: 'author', content: 'Marta Casal' },
+      { property: 'og:title', content: 'Content Title for social media' }
+    ]);
+  }*/
 }
 
 /* ALTRES EXEMPLES DE METODES */
