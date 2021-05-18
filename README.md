@@ -26,9 +26,7 @@ Primer contacto con Angular. El objetivo es crear una estructura básica que sir
 
 ## Screenshots
 <a href="https://mcasal-angular-basic.netlify.app">
-  <img height="200em" src="https://user-images.githubusercontent.com/60666104/116046021-f281af80-a672-11eb-9ab7-a41d7b891292.png"/>
-  <img height="200em" src="https://user-images.githubusercontent.com/60666104/116046034-f4e40980-a672-11eb-8754-847b4c53512c.png"/>
-  <img height="200em" src="https://user-images.githubusercontent.com/60666104/116046040-f57ca000-a672-11eb-88bb-30f1b12458dc.png"/>
+  <img src="https://user-images.githubusercontent.com/60666104/118626128-e0ef7b80-b7ca-11eb-926d-be9ef85d6a08.gif"/>
 </a>
 
 Versión subida en Netlify: [Angular portfolio template](mcasal-angular-basic.netlify.app)<br/>
